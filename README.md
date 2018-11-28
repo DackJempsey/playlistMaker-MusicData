@@ -12,5 +12,7 @@ figure out how to make playlist using api
 
 Want solid data analysis
 
+can do make type of playlist: Sad, Happy, Workout, Study
+
 
 ## Usage 
