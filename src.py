@@ -30,46 +30,51 @@ from json.decoder import JSONDecodeError
 
 import spotipy.util as util
 
-def main(args):
-
-
-	username ='1210610133'
-	scope = 'user-read-library user-read-private user-read-playback-state user-modify-playback-state'
-
-	'''
-	if len(sys.argv) > 1:
-		username = sys.argv[1]
-	else:
-		print ("Usage: %s username" % (sys.argv[0],))
-		sys.exit()
-	'''
-
+def login(username, scope):
+	
 	try:
 		token = util.prompt_for_user_token(username,scope)
 	except:#(AttributeError, JSONDecodeError):
 		os.remove(f".cache-{username}")
 		token = util.prompt_for_user_token(username,scope)
 
-		#creates spotipy object
+	#creates spotipy object
 	#sp = spotipy.Spotify(auth=token)
 	if token:
 		sp = spotipy.Spotify(auth=token)
-		results = sp.current_user_saved_tracks()
-		for item in results['items']:
-			track = item['track']
-			print (track['name'] + ' - ' + track['artists'][0]['name'])
+		return sp
 	else:
 		print( "Can't get token for", username)
+		return -1
+	
+def getTracks(sp):
+	#saved tracks
+	results = sp.current_user_saved_tracks()
+	for item in results['items']:
+		track = item['track']
+		print (track['name'] + ' - ' + track['artists'][0]['name'])
 
-	#https://spotipy.readthedocs.io/en/latest/#spotipy.client.Spotify.current_user_playing_track
+def currPlaying(sp):
+	#https://spotipy.readthedocs.io/en/latest/#spotipy.client.Spotify.current_user_playing_track		
 	track = sp.current_user_playing_track()
 	artist = track['item']['artists'][0]['name']
 	track = track['item']['name']
-
-	if artist != "":
+	while(artist != ""):
 		print("Currently playing " + artist + " - " + track)
+		time.sleep(120)#wait 2 minutes before checking again	
+	
+
+def main(args):
+
+	#make this a user input
+	username ='1210610133'
+	scope = 'user-read-library user-read-private user-read-playback-state user-modify-playback-state'
+	sp = login(username, scope)
+	
+	getTracks(sp)
+	
 
 
 if __name__ == '__main__':
-    import sys
+
     sys.exit(main(sys.argv))
