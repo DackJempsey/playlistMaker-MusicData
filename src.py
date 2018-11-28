@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #
-#  spotify_twitch.py
 #
 #  Copyright 2018 Jack Dempsey <jackdempsey@rgnt2-102-74-dhcp.int.colorado.edu>
 #
@@ -20,7 +19,6 @@
 #  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 #  MA 02110-1301, USA.
 #
-#  This is the spotify API for my twitch stream
 #
 
 
@@ -34,15 +32,9 @@ import spotipy.util as util
 
 def main(args):
 
-	#export SPOTIPY_CLIENT_ID='1458f69511504e6fa21d91785a1e597f'
-	#export SPOTIPY_CLIENT_SECRET='511d43e077db4e929e2f3307470d09df'
-	#export SPOTIPY_REDIRECT_URI='https://www.twitch.tv/lossingenerality'
-	#user id  https://open.spotify.com/user/1210610133?si=MwK2DbVVTseggKQpNFxZkw
 
 	username ='1210610133'
 	scope = 'user-read-library user-read-private user-read-playback-state user-modify-playback-state'
-	#util.prompt_for_user_token(username,scope,client_id='1458f69511504e6fa21d91785a1e597f',client_secret='511d43e077db4e929e2f3307470d09df',
-	#redirect_uri = "www.google.com")
 
 	'''
 	if len(sys.argv) > 1:
