@@ -2,6 +2,7 @@
 With this program, witten in python, you can import your spotify playlist and it will create one for you.
 
 ## Usage 
+At any time I may be unit testing functions and depending on the version, you may be only using a section of this program.
 ```
 python3 main.py
 ```
