@@ -2,9 +2,17 @@
 With this program, witten in python, you can import your spotify playlist and it will create one for you.
 
 ## Usage 
-At any time I may be unit testing functions and depending on the version, you may be only using a section of this program.
+Make Playlist:
 ```
-python3 main.py
+python3 main.py Playlist
+```
+Delete Playlist with playlist id:(Used for unit testing when creating multiple playlists in a row)
+```
+python3 main.py Playlist playlist- id-here
+```
+Get some data on songs and such:
+``
+python3 main.py GetData
 ```
 
 ## Libraries
