@@ -81,11 +81,11 @@ def main(args):
 		#print("search: ",sp.search("Mac Miller",limit=5,offset=0,type='artist',market=None))
 		#songStats.Analysis(sp)
 		#songStats.Features(sp)
-		ans = input("Song or Playlist?")
-		if(ans == "Song" || ans =="song"):
+		ans = input("Song or Playlist? ")
+		if(ans == "Song" or ans =="song"):
 			print("Classification: ",songStats.classifySong(sp, "3VmrLy4WZLHDgTXENCIz2p"))
 		else:
-			songStats.classifPlaylist(sp,username)
+			print("Playlist Score: ",songStats.classifPlaylist(sp,username))
 		
 	if args[1] == "Playlist":
 		n=0

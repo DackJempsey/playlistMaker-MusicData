@@ -55,23 +55,21 @@ def classifPlaylist(sp,user):
 	info = sp.user_playlist(user,PLid,fields =None)
 	n=0
 	score =0
+	if(info['tracks'] == None):
+		print("problem with playlist")
+		return 0
 	for stuff in info['tracks']['items']:
 		#print(stuff['track']['name'])
 		songID = stuff['track']['id']
-		#print(classifySong(sp, songID))
+		if (songID == None):
+			break
 		if(classifySong(sp, songID) == "HAPPY"):
 			score+=1
 		else:
 			score-=1
 		n+=1
-	print(score)
-	if(score >0 ):
-		return "HAPPY"
-	else:
-		return "Less HAPPY"
-		
-	#print(n)
-	
+	#print(score/n)# 1 is very happy, -1 is not happy at all, 0 is neutral
+	return score/n
 
 '''
 LOOK INTO KEY AND MODE on the effects on mood for more analysis
