@@ -8,10 +8,10 @@ python3 main.py Playlist
 ```
 Delete Playlist with playlist id:(Used for unit testing when creating multiple playlists in a row)
 ```
-python3 main.py Playlist playlist- id-here
+python3 main.py Playlist playlist-id-here
 ```
 Get some data on songs and such:
-``
+```
 python3 main.py GetData
 ```
 
