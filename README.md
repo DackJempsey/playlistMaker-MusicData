@@ -32,9 +32,9 @@ can do make type of playlist: Sad, Happy, Workout, Study
 
 LOOK INTO KEY AND MODE on the effects on mood for more analysis
 
-Workout tracks should have: high energy, High danceability, High Energy, high loudness
-Study/Chill tracks should have: High Valence, low tempo, low loudness, high instrumentalness
-Sad tracks should have: Low Valence, low tempo, low loudness, low energy
+Workout tracks should have: high energy, High danceability, High Energy, high loudness\
+Study/Chill tracks should have: High Valence, low tempo, low loudness, high instrumentalness\
+Sad tracks should have: Low Valence, low tempo, low loudness, low energy\
 Happy tracks should have: High Valence, High liveness (Key and mode need to be researched more)
 
 Get solid UI done, with stats display and such.
