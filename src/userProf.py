@@ -26,7 +26,17 @@
 
 
 def userProf(sp, user):
+	#can use affinity score to help profile
+	print("test")
 	
+	
+	
+def getSample(sp, user, numberOfTracks):
+	#lets say people add aprox 3 songs within the same artist or style, 
+	#lets do every third song. If they have a whole album then that would
+	#skew the stats towards that artist/style
+	#can also use spotifys afinity score 
+	print("test")
 
 
 

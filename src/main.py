@@ -22,7 +22,7 @@
 #
 
 
-import os,sys, spotipy, json, webbrowser, time
+import os,sys, spotipy, json, webbrowser, time, userProf, extras
 import spotipy.util as util
 from json.decoder import JSONDecodeError
 
@@ -48,25 +48,7 @@ def login(username, scope):
 	else:
 		print( "Can't get token for", username)
 		return -1
-	
-def getTracks(sp):
-	#saved tracks
-	results = sp.current_user_saved_tracks()
-	for item in results['items']:
-		track = item['track']
-		print (track['name'] + ' - ' + track['artists'][0]['name'])
 
-def currPlaying(sp):
-	#https://spotipy.readthedocs.io/en/latest/#spotipy.client.Spotify.current_user_playing_track		
-	track = sp.current_user_playing_track()
-	artist = track['item']['artists'][0]['name']
-	track = track['item']['name']
-	while(artist != ""):
-		print("Updates every 2 minutes\n")
-		print("Currently playing " + artist + " - " + track+"\n")
-		time.sleep(120)#wait 2 minutes before checking again
-	print("Nothing Playing")	
-		
 def createPlaylist(sp,user):
 	PLname = input("Enter playlist name you wish to create: ")
 	print("creating Playlist "+PLname+ " now")
@@ -93,17 +75,24 @@ def main(args):
 		user-modify-playback-state playlist-modify-public playlist-modify-private'
 	sp = login(username, scope)
 	
-	#getTracks(sp)
-	#print(sp.me())
-	#currPlaying(sp)
+	#extras.getTracks(sp)
+	#extras.currPlaying(sp)
+	#print("search: ",sp.search("Mac Miller",limit=5,offset=0,type='artist',market=None))
+	
+	id = '3VmrLy4WZLHDgTXENCIz2p'
+	#extras.songInfo(sp, tracks)
+	#print("audio analysis:\n",sp.audio_analysis(id))
+	tracks = ["3VmrLy4WZLHDgTXENCIz2p"]
+	print("audio features:\n",sp.audio_features(tracks))
+	
+	'''
 	if(len(args)>1):
 		PLid = args[1]
 		deletePlaylist(sp,PLid,username)
 	else:
 		PLid = createPlaylist(sp,username)
-		tracks = ['3VmrLy4WZLHDgTXENCIz2p']
 		addSongs(sp, username, PLid, tracks)
-	
+	'''
 
 
 if __name__ == '__main__':
