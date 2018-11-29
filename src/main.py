@@ -68,17 +68,38 @@ def addSongs(sp, user, PLid,tracks):
 
 
 def main(args):
-
+	
 	#make this a user input
 	username ='1210610133'
 	scope = 'user-library-read user-read-private user-read-playback-state\
 		user-modify-playback-state playlist-modify-public playlist-modify-private'
 	sp = login(username, scope)
 	
-	#extras.getTracks(sp)
-	#extras.currPlaying(sp)
-	#print("search: ",sp.search("Mac Miller",limit=5,offset=0,type='artist',market=None))
-	songStats.Analysis(sp)
+	if args[1] == "GetData":
+		
+		#print("search: ",sp.search("Mac Miller",limit=5,offset=0,type='artist',market=None))
+		songStats.Analysis(sp)
+		
+	if args[1] == "Playlist":
+		n=0
+		if len(args) > 2:# enter the playlist ID to delete it(when unit testing)
+			PLid = args[2]
+			print("Will Delete playlist: ",PLid)
+			n=0
+			while(n!=5):
+				print("You have: ",5-n," second(s) to cancel")
+				n+=1
+				time.sleep(1)
+			deletePlaylist(sp,PLid,username)
+			
+		else:
+			PLid = createPlaylist(sp,username)
+			addSongs(sp, username, PLid, tracks)
+	
+	
+
+
+
 
 	
 	'''
@@ -88,6 +109,8 @@ def main(args):
 	else:
 		PLid = createPlaylist(sp,username)
 		addSongs(sp, username, PLid, tracks)
+	#extras.getTracks(sp)
+	#extras.currPlaying(sp)
 	'''
 
 
