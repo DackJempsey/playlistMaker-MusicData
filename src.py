@@ -64,14 +64,26 @@ def currPlaying(sp):
 	while(artist != ""):
 		print("Updates every 2 minutes\n")
 		print("Currently playing " + artist + " - " + track+"\n")
-		time.sleep(120)#wait 2 minutes before checking again	
+		time.sleep(120)#wait 2 minutes before checking again
+	print("Nothing Playing")	
 		
 def createPlaylist(sp,user):
 	PLname = input("Enter playlist name you wish to create: ")
 	print("creating Playlist "+PLname+ " now")
 	
-	sp.user_playlist_create(user, PLname, public=False,description="Made with Python")
+	Info = sp.user_playlist_create(user, PLname, public=False,description="Made with Python")
+	PLid = Info['id']
+	print(PLid)
+	return PLid
 	
+def deletePlaylist(sp,PLid,username):
+	sp.user_playlist_unfollow(username, PLid)
+
+
+
+def addSongs(sp, user, PLid,tracks):
+	sp.user_playlist_add_tracks(user, PLid, tracks, position = 0)
+
 
 def main(args):
 
@@ -84,7 +96,13 @@ def main(args):
 	#getTracks(sp)
 	#print(sp.me())
 	#currPlaying(sp)
-	createPlaylist(sp,username)
+	if(len(args)>1):
+		PLid = args[1]
+		deletePlaylist(sp,PLid,username)
+	else:
+		PLid = createPlaylist(sp,username)
+		tracks = ['3VmrLy4WZLHDgTXENCIz2p']
+		addSongs(sp, username, PLid, tracks)
 	
 
 
