@@ -1,15 +1,10 @@
 #this file will be were I take a look at all the stats
 #for songs
 import numpy as np
-import matplotlib as mpl
+import matplotlib.pyplot as plt
 import userProf
 
-def songInfo(sp):
-	#id = '3VmrLy4WZLHDgTXENCIz2p'
-	#print("audio analysis:\n",sp.audio_analysis(id))
-	#tracks = ["3VmrLy4WZLHDgTXENCIz2p"]
-	#print("audio features:\n",sp.audio_features(tracks))
-	print("done nothing")
+
 
 def Analysis(sp):#, id):
 	id = '3VmrLy4WZLHDgTXENCIz2p'#Mac Miller: Kool Aid and Forzen Pizza
@@ -33,10 +28,32 @@ def Features(sp):#, tracks):
 	print("Dancability: ",info[0]['danceability'])
 	print("Energy: ",info[0]['energy'])
 	print("Valence: ",info[0]['valence'])
+	#print("Popularity: ",info[0]['popularity'])
 	
 	print("Dancability: ",info[1]['danceability'])
 	print("Energy: ",info[1]['energy'])
 	print("Valence: ",info[1]['valence'])
+	#print("Popularity: ",info[1]['popularity'])
+	
+	
+def segmentAnalysis(sp,songID):
+	info = sp.audio_analysis(songID)
+	segments =info['segments']
+	loudness =[]
+	time = []
+	for stuff in segments:
+		#loudness.append(stuff['loudness_start'])
+		loudness.append(stuff['loudness_max'])
+		time.append(stuff['start'])
+	plt.plot(time, loudness)
+	plt.title("Loudness of Your Song")
+	plt.xlabel("Time in seconds")
+	plt.ylabel("Volume in Decebels")
+	plt.show()
+	
+	
+	
+	
 	
 def classifySong(sp, songID):#takes in a string, but features api needs array
 	songID = [songID]

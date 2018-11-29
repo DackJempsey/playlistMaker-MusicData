@@ -37,6 +37,13 @@ def getSample(sp, user, numberOfTracks):
 	#skew the stats towards that artist/style
 	#can also use spotifys afinity score 
 	print("test")
+	
+def getSongID(sp, songName):
+	print(songName)
+	song = sp.search(songName, limit =1, offset=0,type='track',market=None)
+	for stuff in song['tracks']['items']:
+		return stuff['id']
+	
 
 def getPLaylistsID(sp,username):
 	PLName = input("Please enter the Name of playlist you wish to look at:")
