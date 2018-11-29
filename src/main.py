@@ -74,11 +74,15 @@ def main(args):
 	scope = 'user-library-read user-read-private user-read-playback-state\
 		user-modify-playback-state playlist-modify-public playlist-modify-private'
 	sp = login(username, scope)
+
 	
 	if args[1] == "GetData":
 		
 		#print("search: ",sp.search("Mac Miller",limit=5,offset=0,type='artist',market=None))
-		songStats.Analysis(sp)
+		#songStats.Analysis(sp)
+		#songStats.Features(sp)
+		print("Classification: ",songStats.classifySong(sp, "3VmrLy4WZLHDgTXENCIz2p"))
+		songStats.classifPlaylist(sp,username)
 		
 	if args[1] == "Playlist":
 		n=0

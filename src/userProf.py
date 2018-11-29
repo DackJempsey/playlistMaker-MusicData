@@ -38,5 +38,14 @@ def getSample(sp, user, numberOfTracks):
 	#can also use spotifys afinity score 
 	print("test")
 
+def getPLaylistsID(sp,username):
+	PLName = input("Please enter the Name of playlist you wish to look at:")
+	playlists = sp.user_playlists(username, limit=50, offset=0)
+	for items in playlists['items']:
+		if(PLName == items['name']):
+			return items['id']
+	
+	
+
 
 
