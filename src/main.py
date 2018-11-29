@@ -23,6 +23,7 @@
 
 
 import os,sys, spotipy, json, webbrowser, time, userProf, extras
+import songStats
 import spotipy.util as util
 from json.decoder import JSONDecodeError
 
@@ -78,12 +79,8 @@ def main(args):
 	#extras.getTracks(sp)
 	#extras.currPlaying(sp)
 	#print("search: ",sp.search("Mac Miller",limit=5,offset=0,type='artist',market=None))
-	
-	id = '3VmrLy4WZLHDgTXENCIz2p'
-	#extras.songInfo(sp, tracks)
-	#print("audio analysis:\n",sp.audio_analysis(id))
-	tracks = ["3VmrLy4WZLHDgTXENCIz2p"]
-	print("audio features:\n",sp.audio_features(tracks))
+	songStats.Analysis(sp)
+
 	
 	'''
 	if(len(args)>1):

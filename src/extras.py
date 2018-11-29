@@ -16,8 +16,5 @@ def currPlaying(sp):
 		time.sleep(120)#wait 2 minutes before checking again
 	print("Nothing Playing")	
 	
-def songInfo(sp, tracks):
-	print("audio analysis:\n"+sp.audio_analysis(tracks))#takes string
-	print("audio features:\n"+sp.audio_features(tracks))
 
 
