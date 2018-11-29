@@ -22,7 +22,7 @@
 #
 
 
-import os,sys, spotipy, json, webbrowser
+import os,sys, spotipy, json, webbrowser, time
 import spotipy.util as util
 from json.decoder import JSONDecodeError
 
@@ -62,18 +62,29 @@ def currPlaying(sp):
 	artist = track['item']['artists'][0]['name']
 	track = track['item']['name']
 	while(artist != ""):
-		print("Currently playing " + artist + " - " + track)
+		print("Updates every 2 minutes\n")
+		print("Currently playing " + artist + " - " + track+"\n")
 		time.sleep(120)#wait 2 minutes before checking again	
+		
+def createPlaylist(sp,user):
+	PLname = input("Enter playlist name you wish to create: ")
+	print("creating Playlist "+PLname+ " now")
+	
+	sp.user_playlist_create(user, PLname, public=False,description="Made with Python")
 	
 
 def main(args):
 
 	#make this a user input
 	username ='1210610133'
-	scope = 'user-library-read'#user-read-private user-read-playback-state user-modify-playback-state'
+	scope = 'user-library-read user-read-private user-read-playback-state\
+		user-modify-playback-state playlist-modify-public playlist-modify-private'
 	sp = login(username, scope)
 	
-	getTracks(sp)
+	#getTracks(sp)
+	#print(sp.me())
+	#currPlaying(sp)
+	createPlaylist(sp,username)
 	
 
 
