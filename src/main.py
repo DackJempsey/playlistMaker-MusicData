@@ -32,14 +32,13 @@ from json.decoder import JSONDecodeError
 import spotipy.util as util
 
 def login(username, scope):
-	client_id = '845e268204ee4704bb1e441090062f85'
-	client_secret = 'd945e2adad244d769c4f71d2e640937c'
-	redirect_uri = 'https://github.com/DackJempsey/playlistMaker'
+	#you can import your client id, secret_id here however I have chosen to export
+	#them since I this is a public github read more here:https://spotipy.readthedocs.io/en/latest/
 	try:
-		token = util.prompt_for_user_token(username,scope, client_id, client_secret, redirect_uri)
+		token = util.prompt_for_user_token(username,scope)#, client_id, client_secret, redirect_uri)
 	except:#(AttributeError, JSONDecodeError):
 		os.remove(f".cache-{username}")
-		token = util.prompt_for_user_token(username,scope,client_id, client_secret, redirect_uri)
+		token = util.prompt_for_user_token(username,scope)#,client_id, client_secret, redirect_uri)
 
 	#creates spotipy object
 	#sp = spotipy.Spotify(auth=token)
