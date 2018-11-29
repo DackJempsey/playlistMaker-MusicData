@@ -4,7 +4,6 @@ With this program, witten in python, you can import your spotify playlist and it
 ## Todo
 make so that authorization is done easily(opens window)
  
- Dont have my authorizations as public info
   
 decide how to make playlist
 
@@ -16,3 +15,7 @@ can do make type of playlist: Sad, Happy, Workout, Study
 
 
 ## Usage 
+
+
+## Libraries
+I heavily rely on the spotipy: https://spotipy.readthedocs.io/en/latest/ library, and its great.
