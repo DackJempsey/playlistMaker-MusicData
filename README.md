@@ -38,3 +38,5 @@ Sad tracks should have: Low Valence, low tempo, low loudness, low energy\
 Happy tracks should have: High Valence, High liveness (Key and mode need to be researched more)
 
 Get solid UI done, with stats display and such.
+
+Need to chanege some if statements to exeptions for error
