@@ -24,13 +24,10 @@ python3 main.py GetData
 I heavily rely on the spotipy: https://spotipy.readthedocs.io/en/latest/ library, and its great.
 
 ## Todo
-make so that authorization is done easily(opens window)
- 
-  
-decide how to make playlist
-
-figure out how to make playlist using api
+Decide stats to use on making playlist.
 
 Want solid data analysis
 
 can do make type of playlist: Sad, Happy, Workout, Study
+
+Get solid UI done, with stats display and such.
