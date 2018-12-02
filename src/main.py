@@ -91,7 +91,7 @@ def main(args):
 			songID = userProf.getSongID(sp, songName)
 			#print("Classification: ",songStats.classifySong(sp, "3VmrLy4WZLHDgTXENCIz2p"))
 			#songStats.Features(sp)
-			songStats.segmentAnalysis(sp, songID)
+			songStats.getLoudnessPLot(sp, songID)
 		else:
 			print("Playlist Score: ",songStats.classifPlaylist(sp,username))
 		
@@ -110,6 +110,15 @@ def main(args):
 		else:
 			PLid = createPlaylist(sp,username)
 			addSongs(sp, username, PLid, tracks)
+	else:
+		#unit testing new functions here no arguemnts needed for ease of use
+		
+		songName = input("Song name: ")
+		songID = userProf.getSongID(sp, songName)
+		
+		songStats.getBeatsHeat(sp, songID)
+		
+		
 
 
 if __name__ == '__main__':
