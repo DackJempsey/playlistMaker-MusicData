@@ -44,7 +44,8 @@ def segmentAnalysis(sp,songID):
 	for stuff in segments:
 		#loudness.append(stuff['loudness_start'])
 		loudness.append(stuff['loudness_max'])
-		time.append(stuff['start'])
+		time.append(stuff['start'])	
+	
 	plt.plot(time, loudness)
 	plt.title("Loudness of Your Song")
 	plt.xlabel("Time in seconds")
@@ -87,6 +88,9 @@ def classifPlaylist(sp,user):
 		n+=1
 	#print(score/n)# 1 is very happy, -1 is not happy at all, 0 is neutral
 	return score/n
+
+
+
 
 '''
 LOOK INTO KEY AND MODE on the effects on mood for more analysis

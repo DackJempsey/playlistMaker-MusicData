@@ -2,7 +2,8 @@
 # -*- coding: utf-8 -*-
 #
 #
-#  Copyright 2018 Jack Dempsey <jackdempsey@rgnt2-102-74-dhcp.int.colorado.edu>
+# 	Copyright 2018 Jack Dempsey <jack.n.dempsey@colorado.edu>
+#	github link: https://github.com/DackJempsey/playlistMaker
 #
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
@@ -19,7 +20,10 @@
 #  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 #  MA 02110-1301, USA.
 #
-#
+# This program will make a playlist using a user profile from data gathered
+# with the spotify API
+# You can also take a look at the data by using the GetData Function
+# 
 
 
 import os,sys, spotipy, json, webbrowser, time, userProf, extras
@@ -70,7 +74,7 @@ def addSongs(sp, user, PLid,tracks):
 def main(args):
 	
 	#make this a user input
-	username ='1210610133'
+	username ='1210610133'#user Id for Jack Dempsey, 
 	scope = 'user-library-read user-read-private user-read-playback-state\
 		user-modify-playback-state playlist-modify-public playlist-modify-private'
 	sp = login(username, scope)
@@ -106,23 +110,6 @@ def main(args):
 		else:
 			PLid = createPlaylist(sp,username)
 			addSongs(sp, username, PLid, tracks)
-	
-	
-
-
-
-
-	
-	'''
-	if(len(args)>1):
-		PLid = args[1]
-		deletePlaylist(sp,PLid,username)
-	else:
-		PLid = createPlaylist(sp,username)
-		addSongs(sp, username, PLid, tracks)
-	#extras.getTracks(sp)
-	#extras.currPlaying(sp)
-	'''
 
 
 if __name__ == '__main__':
