@@ -1,5 +1,5 @@
 ![Package](https://img.shields.io/pypi/pyversions/Django.svg)
-[![License](https://img.shields.io/badge/license-GNU-blue.svg)(https://github.com/DackJempsey/playlistMaker/blob/master/LICENSE.md)]
+[![License](https://img.shields.io/badge/license-GNU-blue.svg)](https://github.com/DackJempsey/playlistMaker/blob/master/LICENSE.md)
 
 # playlistMaker
 With this program, witten in python, you can import your spotify playlist and it will create one for you.
