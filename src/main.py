@@ -86,7 +86,7 @@ def main(args):
 		#songStats.Analysis(sp)
 		#songStats.Features(sp)
 		ans = input("Song or Playlist? ")
-		if(ans == "Song" or ans =="song"):
+		if(ans.lower() =="song"):
 			songName=input("Enter Song Name: ")
 			songID = userProf.getSongID(sp, songName)
 			#print("Classification: ",songStats.classifySong(sp, "3VmrLy4WZLHDgTXENCIz2p"))

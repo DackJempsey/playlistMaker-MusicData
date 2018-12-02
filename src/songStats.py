@@ -41,16 +41,19 @@ def segmentAnalysis(sp,songID):
 	segments =info['segments']
 	loudness =[]
 	time = []
-	for stuff in segments:
+	for info in segments:
 		#loudness.append(stuff['loudness_start'])
-		loudness.append(stuff['loudness_max'])
-		time.append(stuff['start'])	
-	
+		loudness.append(info['loudness_max'])
+		time.append(info['start'])	
+	#take out the not so loud intro
+	for i in range(0,5):
+		time.pop(i)
+		loudness.pop(i)
 	plt.plot(time, loudness)
 	plt.title("Loudness of Your Song")
 	plt.xlabel("Time in seconds")
 	plt.ylabel("Volume in Decebels")
-	plt.show()
+	plt.savefig('LetItHappen.png')
 	
 	
 	
