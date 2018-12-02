@@ -29,7 +29,7 @@ python3 main.py GetData
 I heavily rely on the spotipy: https://spotipy.readthedocs.io/en/latest/ library, and its great. I have been told that updates stopped about a year ago, however it still works great!
 
 ## Examples
-
+![example](https://github.com/DackJempsey/playlistMaker/blob/master/examples/LetItHappen.png)
 
 
 ## Todo
