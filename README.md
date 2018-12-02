@@ -21,8 +21,7 @@ python3 main.py GetData
 ```
 
 ## Libraries
-I heavily rely on the spotipy: https://spotipy.readthedocs.io/en/latest/ library, and its great. Big thanks to those people that work on it and keep it up to date.
-
+I heavily rely on the spotipy: https://spotipy.readthedocs.io/en/latest/ library, and its great. I have been told that updates stopped about a year ago, however it still works great!
 ## Todo
 Decide stats to use on making playlist.
 
