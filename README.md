@@ -40,6 +40,7 @@ Here are four graphs that represent 4 different recomendation requests. What we 
 ![example](https://github.com/DackJempsey/playlistMaker-MusicData/blob/master/examples/ratios3.png)
 ![example](https://github.com/DackJempsey/playlistMaker-MusicData/blob/master/examples/ratios4.png)
 
+We can see that Danceability, Valence and Instrumentalness are usually very close to one, therfore they may be used more in recomendations. While Tempo and Key are usually quite high/different, and are therefore likely less used when making recomendations.
 
 
 ## Todo
