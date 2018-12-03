@@ -3,7 +3,7 @@
 [![Spotipy](https://img.shields.io/badge/library-spotipy-brightgreen.svg)](https://spotipy.readthedocs.io/en/latest/)
 ![Package](https://img.shields.io/badge/for-fun-orange.svg)
 
-# playlistMaker
+# playlistMaker-MusicData
 With this program, witten in python, you can import your spotify playlist and it will create one for you.
 
 If you would like to run this program you will need to do some legwork before hand since I have yet to build a 
