@@ -113,11 +113,12 @@ def main(args):
 	else:
 		#unit testing new functions here no arguemnts needed for ease of use
 		
-		songName = input("Song name: ")
-		songID = userProf.getSongID(sp, songName)
+		#songName = input("Song name: ")
+		#songID = userProf.getSongID(sp, songName)
 		
 		#extras.showTimbre(sp, songID)
 		#extras.showTimeSig(sp, songID)
+		songStats.reversRec(sp, username)
 		
 
 
