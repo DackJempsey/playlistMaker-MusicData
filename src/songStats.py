@@ -70,9 +70,7 @@ def getBeats(sp, songID):
 			print('.', end='')
 		time.sleep(length[b])
 		print(' ')
-	
-	
-	
+
 	
 def classifySong(sp, songID):#takes in a string, but features api needs array
 	songID = [songID]

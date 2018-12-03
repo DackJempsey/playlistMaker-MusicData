@@ -116,8 +116,8 @@ def main(args):
 		songName = input("Song name: ")
 		songID = userProf.getSongID(sp, songName)
 		
-		songStats.getBeats(sp, songID)
-		
+		#extras.showTimbre(sp, songID)
+		#extras.showTimeSig(sp, songID)
 		
 
 

@@ -21,3 +21,40 @@ def currPlaying(sp):
 	
 
 
+def showTimbre(sp, songID):
+	analysis = sp.audio_analysis(songID)
+	segments = analysis['segments']
+	length = []
+	timbre = []
+	for info in segments:
+		length.append(info['start'])
+		timbre.append(info['timbre'])
+		
+	
+	for i in range(0,11):
+		stuff=[]
+		for items in timbre:
+			stuff.append(items[i])
+		plt.plot(length, stuff)
+
+		plt.hold(True)
+	plt.title("Timbre of Your Song")
+	plt.xlabel("Time in seconds")
+	plt.ylabel("Some Random Stuff")
+	plt.hold(False)
+	plt.show()
+
+def showTimeSig(sp, songID):
+	analysis = sp.audio_analysis(songID)
+	segments = analysis['sections']
+	length = []
+	timeSig = []
+	for info in segments:
+		timeSig.append(info['time_signature'])
+		length.append(info['start'])
+	plt.plot(length, timeSig)
+	plt.title("Time Signature of a Song")
+	plt.xlabel("Time in Seconds")
+	plt.ylabel("Over 7")
+	plt.show()
+	
