@@ -46,7 +46,7 @@ Here are four graphs that represent 4 different recomendation requests. What we 
 
 We can see that Danceability, Valence and Instrumentalness are usually very close to one, therfore they may be used more in recomendations. While Tempo and Key are usually quite high/different, and are therefore likely less used when making recomendations.
 #### Why look at the recomendations?
-Recomendations is how spotify gets new songs for users. This is usefull in a playlist becuase if a person is partial to a specific key, or tempo of a song, then they may want their playlist to reflect that. However right now it seems that spotify does not take those features into account.
+Recomendations is how spotify gets new songs for users. This is usefull in a playlist becuase if a person is partial to a specific key, or tempo of a song, then they may want their playlist to reflect that. However right now it seems that spotify does not take those features into account. While those features may not be as important as valence or energy, I think it should be taken into account.
 
 
 ## Todo
@@ -62,5 +62,7 @@ Workout tracks should have: high energy, High danceability, High Energy, high lo
 Study/Chill tracks should have: High Valence, low tempo, low loudness, high instrumentalness\
 Sad tracks should have: Low Valence, low tempo, low loudness, low energy\
 Happy tracks should have: High Valence, High liveness (Key and mode need to be researched more)
+
+If someone wants a playlist that takes a certain amount of time to finish
 
 Get solid UI done, with stats display and such.
