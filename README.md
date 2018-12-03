@@ -35,7 +35,7 @@ I heavily rely on the spotipy: https://spotipy.readthedocs.io/en/latest/ library
 ![example](https://github.com/DackJempsey/playlistMaker/blob/master/examples/LetItHappen.png)
 
 ### Looking at Recomendations
-Here are four graphs that represent 4 different recomendation requests. What we are looking at is how similare are some features of the song "seeds" to the one spotify gives. The higher the feature on the graph the less likely it is that recomendations uses that feature of a song. The closer to 1 that the feature is the more likey that it is used. Some are labled for observation.
+Here are four graphs that represent 4 different recomendation requests. What we are looking at is how similar are the features of the song "seeds" to the songs that spotify recomends. The higher the feature on the graph the less likely it is that recomendations uses that feature of a song. The closer to 1 that the feature is the more likey that it is used. Some are labled for observation. I used my 5 top tracks, and then asked for recomendations based on those 5 tracks.
 
 ![example](https://github.com/DackJempsey/playlistMaker-MusicData/blob/master/examples/ratios1.png)
 ![example](https://github.com/DackJempsey/playlistMaker-MusicData/blob/master/examples/ratios2.png)
