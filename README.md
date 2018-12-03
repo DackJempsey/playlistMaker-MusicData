@@ -1,6 +1,7 @@
 ![Package](https://img.shields.io/pypi/pyversions/Django.svg)
 [![License](https://img.shields.io/badge/license-GNU-blue.svg)](https://github.com/DackJempsey/playlistMaker/blob/master/LICENSE.md)
 [![Spotipy](https://img.shields.io/badge/library-spotipy-brightgreen.svg)](https://spotipy.readthedocs.io/en/latest/)
+[![Matplotlib](https://img.shields.io/badge/library-matplotlib-brightgreen.svg)](https://matplotlib.org/index.html)
 ![Package](https://img.shields.io/badge/for-fun-orange.svg)
 
 # playlistMaker-MusicData
