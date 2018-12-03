@@ -2,7 +2,8 @@
 #for songs
 import numpy as np
 import matplotlib.pyplot as plt
-import userProf
+from matplotlib import animation
+import userProf, time
 
 
 
@@ -56,13 +57,22 @@ def getLoudnessPLot(sp,songID):
 	plt.ylabel("Volume in Decebels")
 	plt.savefig('LetItHappen.png')
 
-def getBeatsHeat(sp, songID):
+def getBeats(sp, songID):
 	analysis = sp.audio_analysis(songID)
-	segments = analysis['segments']
-	time = []
+	segments = analysis['beats']
+	length = []
 	beats = []
 	for info in segments:
-		print(info)
+		length.append(info['duration'])
+		beats.append(info['confidence'])
+	songID = ['spotify:track:'+songID]
+	#sp.start_playback(device_id=None,context_uri=None,uris=songID,offset=None,)
+	#when testing if beats match song
+	for b in range(0,len(beats)):
+		for l in range(0,int(beats[b]*20)):
+			print('.', end='')
+		time.sleep(length[b])
+		print(' ')
 	
 	
 	
