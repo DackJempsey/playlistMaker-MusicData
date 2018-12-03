@@ -12,6 +12,8 @@ solid UI. Go Here:https://developer.spotify.com/documentation/general/guides/aut
 
 It would also be good to have your Spotify user-Id(not your name) at hand.
 
+There is a lot of data anylisis right now, becuase I would like to make sure that I get a good understanding about the data before I start using it to create the playlists.
+
 ## Usage 
 Make Playlist:
 ```
