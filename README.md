@@ -33,6 +33,8 @@ I heavily rely on the spotipy: https://spotipy.readthedocs.io/en/latest/ library
 
 ## Examples of Data
 ![example](https://github.com/DackJempsey/playlistMaker/blob/master/examples/LetItHappen.png)
+#### Why is Loudness Important?
+Loudness throughout a song is important when making a playlist becuase, you can make it so that the user has one song that begins with the same loudness as one song ends, for a better listening experience.
 
 ### Looking at Recomendations
 Here are four graphs that represent 4 different recomendation requests. What we are looking at is how similar are the features of the song "seeds" to the songs that spotify recomends. The higher the feature on the graph the less likely it is that recomendations uses that feature of a song. The closer to 1 that the feature is the more likey that it is used. Some are labled for observation. I used my 5 top tracks, and then asked for recomendations based on those 5 tracks.
@@ -43,6 +45,8 @@ Here are four graphs that represent 4 different recomendation requests. What we 
 ![example](https://github.com/DackJempsey/playlistMaker-MusicData/blob/master/examples/ratios4.png)
 
 We can see that Danceability, Valence and Instrumentalness are usually very close to one, therfore they may be used more in recomendations. While Tempo and Key are usually quite high/different, and are therefore likely less used when making recomendations.
+#### Why look at the recomendations?
+Recomendations is how spotify gets new songs for users. This is usefull in a playlist becuase if a person is partial to a specific key, or tempo of a song, then they may want their playlist to reflect that. However right now it seems that spotify does not take those features into account.
 
 
 ## Todo
@@ -60,5 +64,3 @@ Sad tracks should have: Low Valence, low tempo, low loudness, low energy\
 Happy tracks should have: High Valence, High liveness (Key and mode need to be researched more)
 
 Get solid UI done, with stats display and such.
-
-Need to chanege some if statements to exeptions for error
