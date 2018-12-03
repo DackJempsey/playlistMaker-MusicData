@@ -65,6 +65,6 @@ Happy tracks should have: High Valence, High liveness (Key and mode need to be r
 
 If someone wants a playlist that takes a certain amount of time to finish
 
-Get solid UI done, with stats display and such.
+Get solid UI done, with stats display and such.(With Azure)
 
 Integrate with twitter, if person follows the artist.
