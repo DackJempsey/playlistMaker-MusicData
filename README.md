@@ -5,7 +5,7 @@
 ![Package](https://img.shields.io/badge/for-fun-orange.svg)
 
 # playlistMaker-MusicData
-With this program, witten in python, you can import your spotify playlist and it will create one for you.
+With this program, witten in python, you can import your spotify playlist and it will create one for you.(That is the goal) Right now it is mainly used as a data gathering app, then that data will be used to created the playlist. By reverse engineering how spotify makes recomendations, I am hoping to improve upon their system. 
 
 If you would like to run this program you will need to do some legwork before hand since I have yet to build a 
 solid UI. Go Here:https://developer.spotify.com/documentation/general/guides/authorization-guide/ and create a spotify app, to get your personla identification to use. Then export those stats by following these directions: https://spotipy.readthedocs.io/en/latest/#authorization-code-flow
