@@ -32,6 +32,15 @@ I heavily rely on the spotipy: https://spotipy.readthedocs.io/en/latest/ library
 ## Examples of Data
 ![example](https://github.com/DackJempsey/playlistMaker/blob/master/examples/LetItHappen.png)
 
+### Looking at Recomendations
+Here are four graphs that represent 4 different recomendation requests. What we are looking at is how similare are some features of the song "seeds" to the one spotify gives. The higher the feature on the graph the less likely it is that recomendations uses that feature of a song. The closer to 1 that the feature is the more likey that it is used. Some are labled for observation.
+
+![example](https://github.com/DackJempsey/playlistMaker-MusicData/blob/master/examples/ratios1.png)
+![example](https://github.com/DackJempsey/playlistMaker-MusicData/blob/master/examples/ratios2.png)
+![example](https://github.com/DackJempsey/playlistMaker-MusicData/blob/master/examples/ratios3.png)
+![example](https://github.com/DackJempsey/playlistMaker-MusicData/blob/master/examples/ratios4.png)
+
+
 
 ## Todo
 Decide stats to use on making playlist.
