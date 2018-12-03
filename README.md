@@ -46,7 +46,7 @@ Here are four graphs that represent 4 different recomendation requests. What we 
 
 We can see that Danceability, Valence and Instrumentalness are usually very close to one, therfore they may be used more in recomendations. While Tempo and Key are usually quite high/different, and are therefore likely less used when making recomendations.
 #### Why look at the recomendations?
-Recomendations is how spotify gets new songs for users. This is usefull in a playlist becuase if a person is partial to a specific key, or tempo of a song, then they may want their playlist to reflect that. However right now it seems that spotify does not take those features into account. While those features may not be as important as valence or energy, I think it should be taken into account.
+Recomendations is how spotify gets new songs for users. This is usefull in a playlist becuase if a person is partial to a specific key, or tempo of a song, then they may want their playlist to reflect that. However right now it seems that spotify does not take those features into account. While those features may not be as important as valence or energy, I think it should be taken into account. It is possible to add more inputs into the recommendations request, this analysis was done by using 5 songs.  
 
 
 ## Todo
