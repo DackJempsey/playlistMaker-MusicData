@@ -138,7 +138,7 @@ def reversRec(sp, userID):
 	plt.xlabel("Various Song features")
 	plt.ylabel("Ratio of values")
 	plt.hold(False)
-	plt.savefig('../examples/ratios2.png')
+	plt.savefig('../examples/ratios4.png')
 
 	
 
