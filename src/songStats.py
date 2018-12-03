@@ -2,10 +2,7 @@
 #for songs
 import numpy as np
 import matplotlib.pyplot as plt
-from matplotlib import animation
-import userProf, time
-
-
+import userProf, time, animations
 
 def Analysis(sp):#, id):
 	id = '3VmrLy4WZLHDgTXENCIz2p'#Mac Miller: Kool Aid and Forzen Pizza

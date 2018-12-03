@@ -116,7 +116,7 @@ def main(args):
 		songName = input("Song name: ")
 		songID = userProf.getSongID(sp, songName)
 		
-		songStats.getBeatsHeat(sp, songID)
+		songStats.getBeats(sp, songID)
 		
 		
 
