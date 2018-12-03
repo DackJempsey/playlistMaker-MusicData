@@ -58,3 +58,32 @@ def showTimeSig(sp, songID):
 	plt.ylabel("Over 7")
 	plt.show()
 	
+def Analysis(sp):#, id):
+	id = '3VmrLy4WZLHDgTXENCIz2p'#Mac Miller: Kool Aid and Forzen Pizza
+	#print("audio analysis:\n",sp.audio_analysis(id))
+	info = sp.audio_analysis(id)
+	
+	segments = info['segments']
+	num =0
+	for stuff in segments:
+		if(stuff['start']):
+			num+=1
+	print("# of Segements: ",num) 
+	
+	
+	
+	
+def Features(sp):#, tracks):	
+	tracks = ["3VmrLy4WZLHDgTXENCIz2p","4fbvXwMTXPWaFyaMWUm9CR"]#Mac Miller: Kool Aid and Forzen Pizza and Bon Iver Holocene
+	#print("audio features:\n",sp.audio_features(tracks))
+	info = sp.audio_features(tracks)
+	print("Dancability: ",info[0]['danceability'])
+	print("Energy: ",info[0]['energy'])
+	print("Valence: ",info[0]['valence'])
+	#print("Popularity: ",info[0]['popularity'])
+	
+	print("Dancability: ",info[1]['danceability'])
+	print("Energy: ",info[1]['energy'])
+	print("Valence: ",info[1]['valence'])
+	#print("Popularity: ",info[1]['popularity'])
+	
