@@ -125,6 +125,7 @@ def reversRec(sp, userID):
 	topTrackAvg = getFeatureAvg(sp,topIds)
 	recAvg = getFeatureAvg(sp,recIDs)
 	diff = [i-j for i,j in zip(topTrackAvg, recAvg)]
+	#Here we are essentially using the relative errors to compare stats
 	TruDiff = [(i+1)/(j+1) for i,j in zip(topTrackAvg, diff)]
 	num = np.arange(0,12)
 	plt.plot(num,TruDiff,'g*')
