@@ -42,6 +42,14 @@ def getBeats(sp, songID):
 		time.sleep(length[b])
 		print(' ')
 
+def getTempo(sp, songID):
+	analysis = sp.audio_analysis(songID)
+	section = analysis['sections']
+	tempo=[]
+	for info in section:
+		tempo.append(info['tempo'])
+	return tempo
+	
 	
 def classifySong(sp, songID):#takes in a string, but features api needs array
 	songID = [songID]
@@ -142,7 +150,9 @@ def reversRec(sp, userID):
 	plt.hold(False)
 	plt.savefig('../examples/ratios4.png')
 
-	
+
+
+
 
 '''
 LOOK INTO KEY AND MODE on the effects on mood for more analysis

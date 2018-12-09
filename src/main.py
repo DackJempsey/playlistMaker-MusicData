@@ -27,9 +27,10 @@
 
 
 import os,sys, spotipy, json, webbrowser, time, userProf, extras
-import songStats
+import songStats, numpy
 import spotipy.util as util
 from json.decoder import JSONDecodeError
+import matplotlib.pyplot as plt
 
 
 
@@ -120,6 +121,21 @@ def main(args):
 		#extras.showTimeSig(sp, songID)
 		#songStats.reversRec(sp, username)
 		
+		#dunkirk analysis
+		
+		tempo = []
+		#get album first
+		album = sp.album_tracks('56hnQxU8h3Upf1nqR0fXYi')#dunkirk album
+		#get songs from the album
+		for songs in album['items']:
+			songID = userProf.getSongID(sp, songs['name']+' dunkirk')
+			tempo.append(songStats.getTempo(sp, songID))
+		for i in range(0,len(tempo)):
+			x = numpy.arange(0,len(tempo[i]))
+			plt.figure(i)
+			plt.plot(x , tempo[i])
+			plt.title("Song Tempo through time")
+			plt.savefig('../examples/songTempo'+str(i))
 
 
 if __name__ == '__main__':
