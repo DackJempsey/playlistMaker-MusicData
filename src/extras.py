@@ -96,11 +96,14 @@ def tempoGraph(sp,albumID):
 		#get songs from the album
 		for songs in album['items']:
 			songID = userProf.getSongID(sp, songs['name'])
-			tempo.append(songStats.getTempo(sp, songID))
-			analysis = sp.audio_analysis(songID)		
-			for items in analysis['sections']:
-				t=t+items['duration']
-				time.append(t)
+			try:
+				tempo.append(songStats.getTempo(sp, songID))
+				analysis = sp.audio_analysis(songID)		
+				for items in analysis['sections']:
+					t=t+items['duration']
+					time.append(t)
+			except:
+				print('exception')
 				
 		tempo2=[]
 		for items in tempo:
@@ -116,8 +119,8 @@ def tempoGraph(sp,albumID):
 		'''
 		
 		plt.plot(time,tempo2)
-		plt.title('Tempo of Songs in Dunkirk')
-		plt.savefig('../examples/DunkirkTempo')
+		plt.title('Tempo of Songs in The Matrix')
+		plt.savefig('../examples/MatrixTempo')
 	
 	
 	
