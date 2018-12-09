@@ -114,29 +114,15 @@ def main(args):
 	else:
 		#unit testing new functions here no arguemnts needed for ease of use
 		
-		#songName = input("Song name: ")
-		#songID = userProf.getSongID(sp, songName)
+		songName = input("Song name: ")
+		songID = userProf.getSongID(sp, songName)
 		
 		#extras.showTimbre(sp, songID)
 		#extras.showTimeSig(sp, songID)
 		#songStats.reversRec(sp, username)
+		#extras.tempoGraph(sp,albumID = None)
+		#numpy.linalg.matrix_rank(songStats.getTimbre(sp,songID)))
 		
-		#dunkirk analysis
-		
-		tempo = []
-		#get album first
-		album = sp.album_tracks('56hnQxU8h3Upf1nqR0fXYi')#dunkirk album
-		#get songs from the album
-		for songs in album['items']:
-			songID = userProf.getSongID(sp, songs['name']+' dunkirk')
-			tempo.append(songStats.getTempo(sp, songID))
-		for i in range(0,len(tempo)):
-			x = numpy.arange(0,len(tempo[i]))
-			plt.figure(i)
-			plt.plot(x , tempo[i])
-			plt.title("Song Tempo through time")
-			plt.savefig('../examples/songTempo'+str(i))
-
 
 if __name__ == '__main__':
 

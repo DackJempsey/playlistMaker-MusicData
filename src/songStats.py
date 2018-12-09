@@ -50,6 +50,22 @@ def getTempo(sp, songID):
 		tempo.append(info['tempo'])
 	return tempo
 	
+
+def getTimbre(sp, songID):
+	analysis = sp.audio_analysis(songID)
+	segments = analysis['segments']
+	timbre =[]
+	for info in segments:
+		timbre.append(info['timbre'])
+	return timbre
+
+def getSegmentDuration(sp, songID):
+	analysis = sp.audio_analysis(songID)
+	segments = analysis['segments]
+	time = []
+	for info in segments:
+		time.append(info['duration'])
+	return time
 	
 def classifySong(sp, songID):#takes in a string, but features api needs array
 	songID = [songID]

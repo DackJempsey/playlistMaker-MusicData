@@ -87,3 +87,30 @@ def Features(sp):#, tracks):
 	print("Valence: ",info[1]['valence'])
 	#print("Popularity: ",info[1]['popularity'])
 	
+	
+def tempoGraph(sp,albumID):
+		#dunkirk analysis
+		
+		tempo = []
+		if albumID==None:
+			albumID = '56hnQxU8h3Upf1nqR0fXYi'
+		album = sp.album_tracks(albumID)#dunkirk album
+		#get songs from the album
+		for songs in album['items']:
+			songID = userProf.getSongID(sp, songs['name']+' dunkirk')
+			tempo.append(songStats.getTempo(sp, songID))
+		for i in range(0,len(tempo)):
+			x = numpy.arange(0,len(tempo[i]))
+			plt.figure(i)
+			plt.plot(x , tempo[i])
+			plt.title("Song Tempo through time")
+			plt.savefig('../examples/songTempo'+str(i))
+
+
+	
+	
+	
+	
+	
+	
+	
