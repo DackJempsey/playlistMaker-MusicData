@@ -95,7 +95,7 @@ def tempoGraph(sp,albumID):
 		album = sp.album_tracks(albumID)#dunkirk album
 		#get songs from the album
 		for songs in album['items']:
-			songID = userProf.getSongID(sp, songs['name']+' dunkirk')
+			songID = userProf.getSongID(sp, songs['name'])
 			tempo.append(songStats.getTempo(sp, songID))
 			analysis = sp.audio_analysis(songID)		
 			for items in analysis['sections']:
