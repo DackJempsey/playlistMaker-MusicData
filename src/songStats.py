@@ -61,7 +61,7 @@ def getTimbre(sp, songID):
 
 def getSegmentDuration(sp, songID):
 	analysis = sp.audio_analysis(songID)
-	segments = analysis['segments]
+	segments = analysis['segments']
 	time = []
 	for info in segments:
 		time.append(info['duration'])

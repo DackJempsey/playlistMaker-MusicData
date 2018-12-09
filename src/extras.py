@@ -1,5 +1,6 @@
-import time
-
+import time,userProf,songStats
+import matplotlib.pyplot as plt
+import warnings,numpy
 
 def getTracks(sp):
 	#saved tracks
@@ -37,12 +38,7 @@ def showTimbre(sp, songID):
 			stuff.append(items[i])
 		plt.plot(length, stuff)
 
-		plt.hold(True)
-	plt.title("Timbre of Your Song")
-	plt.xlabel("Time in seconds")
-	plt.ylabel("Some Random Stuff")
-	plt.hold(False)
-	plt.show()
+	plt.show
 
 def showTimeSig(sp, songID):
 	analysis = sp.audio_analysis(songID)
@@ -92,6 +88,8 @@ def tempoGraph(sp,albumID):
 		#dunkirk analysis
 		
 		tempo = []
+		time=[]
+		t=0
 		if albumID==None:
 			albumID = '56hnQxU8h3Upf1nqR0fXYi'
 		album = sp.album_tracks(albumID)#dunkirk album
@@ -99,14 +97,27 @@ def tempoGraph(sp,albumID):
 		for songs in album['items']:
 			songID = userProf.getSongID(sp, songs['name']+' dunkirk')
 			tempo.append(songStats.getTempo(sp, songID))
+			analysis = sp.audio_analysis(songID)		
+			for items in analysis['sections']:
+				t=t+items['duration']
+				time.append(t)
+				
+		tempo2=[]
+		for items in tempo:
+			for j in range(0,len(items)):
+				tempo2.append(items[j])
+		'''
 		for i in range(0,len(tempo)):
 			x = numpy.arange(0,len(tempo[i]))
 			plt.figure(i)
 			plt.plot(x , tempo[i])
 			plt.title("Song Tempo through time")
 			plt.savefig('../examples/songTempo'+str(i))
-
-
+		'''
+		
+		plt.plot(time,tempo2)
+		plt.title('Tempo of Songs in Dunkirk')
+		plt.savefig('../examples/DunkirkTempo')
 	
 	
 	
